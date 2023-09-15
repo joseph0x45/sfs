@@ -6,6 +6,10 @@ import (
 )
 
 func main() {
+  http.HandleFunc("/test2", func(w http.ResponseWriter, r *http.Request) {
+    w.WriteHeader(http.StatusOK)
+    return
+  })
 	http.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodGet {
       http.ServeFile(w, r, "./static/test.sh")

@@ -24,4 +24,4 @@ COPY --from=builder /app/sfs .
 EXPOSE 8080
 
 # Run the application
-CMD ["./sfs"]
+CMD ["sfs"]

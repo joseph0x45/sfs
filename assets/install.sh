@@ -7,7 +7,7 @@ if command -v git &> /dev/null; then
   echo "Found $git_version"
   echo "Cloning latest tmx from github ..."
   git clone https://github.com/TheWisePigeon/tmx /tmp/tmx 
-  if [ $? -eq 0 ]; then
+  if [ $? -eq 1 ]; then
     echo "Failed to clone tmx from github"
     exit 1
   else
@@ -15,7 +15,7 @@ if command -v git &> /dev/null; then
   fi
   echo "Adding executable permission to tmx"
   chmod u+x /tmp/tmx/tmx.sh
-  if [ $? -eq 0 ]; then
+  if [ $? -eq 1 ]; then
     echo "Failed to add executable permission to tmx"
     echo "Cleaning up before aborting"
     rm -rf /tmp/tmx
@@ -25,7 +25,7 @@ if command -v git &> /dev/null; then
   fi
   echo "Moving tmx to /usr/local/bin/ (You may move it elsewhere after the installation as you wish)"
   mv /tmp/tmx/tmx.sh /usr/local/bin/
-  if [ $? -eq 0 ]; then
+  if [ $? -eq 1 ]; then
     echo "Failed to add executable permission to tmx"
     echo "Cleaning up before aborting"
     rm -rf /tmp/tmx

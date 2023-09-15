@@ -5,8 +5,8 @@ FROM golang:latest AS builder
 WORKDIR /app
 
 # Copy the Go application and static files
-COPY main.go /app/
-COPY static /app/static/
+COPY * /app/
+# COPY static /app/static/
 
 # Build the Go application
 RUN go build -o sfs

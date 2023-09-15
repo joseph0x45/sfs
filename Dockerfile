@@ -18,7 +18,7 @@ FROM alpine:latest
 WORKDIR /root/
 
 # Copy the built executable from the builder stage
-COPY --from=builder /app/static-file-server .
+COPY --from=builder /app/sfs .
 
 # Expose the port the application runs on
 EXPOSE 8080

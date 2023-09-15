@@ -24,9 +24,9 @@ if command -v git &> /dev/null; then
     echo "Done"
   fi
   echo "Moving tmx to /usr/local/bin/ (You may move it elsewhere after the installation as you wish)"
-  mv /tmp/tmx/tmx.sh /usr/local/bin/
+  sudo mv /tmp/tmx/tmx.sh /usr/local/bin/
   if [ $? -eq 1 ]; then
-    echo "Failed to add executable permission to tmx"
+    echo "Failed to move tmx into /usr/local/bin"
     echo "Cleaning up before aborting"
     rm -rf /tmp/tmx
     exit 1

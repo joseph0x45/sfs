@@ -5,6 +5,9 @@ const server = Bun.serve({
     if (req_url.pathname === "/test") {
       return new Response(Bun.file("./assets/test.sh"))
     }
+    if (req_url.pathname === "/tmx") {
+      return new Response(Bun.file("./assets/install.sh"))
+    }
     return new Response("", { status: 404 })
   }
 })
